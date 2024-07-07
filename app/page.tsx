@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { UserButton } from "@clerk/nextjs";
 
 export default function Home() {
-  return <Button>Buttom</Button>
+  return <div className="h-auto w-auto "><UserButton/></div>
 }
