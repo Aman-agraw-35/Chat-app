@@ -11,4 +11,15 @@ export const create = internalMutation({
     handler : async (ctx , args ) => {
         await ctx.db.insert("users", args );
     } ,
-})
+});
+
+export const get = internalQuery({
+    args : { clerkId: v.string() },
+    async handler(ctx , args ) {
+        return ctx.db 
+        .query("users")
+        .withIndex("by_clerkId" ,
+             (q) => q.eq("clerkId", args.clerkId) )
+             .unique();
+    }
+});
