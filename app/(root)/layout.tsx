@@ -1,11 +1,11 @@
-import SidebaeWrapper from '@/components/shared/SidebaeWrapper';
+import SidebarWrapper from '@/components/shared/sidebar/SidebarWrapper';
 import React from 'react'
 
 type Props = React.PropsWithChildren<{}>;
 
 const layout = ({children}: Props) => {
   return (
-<SidebaeWrapper>{children}</SidebaeWrapper>  )
+<SidebarWrapper>{children}</SidebarWrapper>  )
 }
 
 export default layout

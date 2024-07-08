@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Authenticated, AuthLoading } from "convex/react";
+import { Authenticated, AuthLoading, Unauthenticated } from "convex/react";
 import Loading from "@/components/shared/Loading";
 
 type Props = {
@@ -15,6 +15,7 @@ const AuthWrapper = ({ children }: Props) => {
       <AuthLoading>
         <Loading />
       </AuthLoading>
+      <Unauthenticated>loading</Unauthenticated>
     </>
   );
 };
