@@ -4,6 +4,7 @@ import "./globals.css";
 import ConvexClientProvider from "@/providers/ConvexClientProvider";
 import AuthWrapper from "@/providers/Authwrapper";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "@/components/ui/theme/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <ThemeProvider 
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange >
         <ConvexClientProvider>
           <AuthWrapper>
             <TooltipProvider>
@@ -27,6 +33,7 @@ export default function RootLayout({
           </TooltipProvider>
             </AuthWrapper> 
         </ConvexClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
